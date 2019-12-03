@@ -36,39 +36,38 @@
       </li>
     </ul>
 
-    <b>THEMES</b>
-    <ul>
-      <li v-for="theme in themes" :key="theme">
-        {{theme}}
-      </li>
-    </ul>
+    <Categories />
+    <Themes />
 
-    <b>CATEGORIES</b>
-    <ul>
-      <li v-for="category in categories" :key="category">
-        {{category}}
-      </li>
-    </ul>
   </div>
 </template>
 
 <script>
+// Components
+import Categories from './Categories'
+import Themes from './Themes'
+
+// Assets
+// TODO Passer en paramètre ?
+import themes from '../assets/json/themes.json'
+// TODO Passer en paramètre ?
 import categories from '../assets/json/categories.json'
 import durations from '../assets/json/durations.json'
 import players from '../assets/json/players.json'
-import themes from '../assets/json/themes.json'
 import types from '../assets/json/types.json'
 
 export default {
   name: 'Match',
+  components: {
+    Categories,
+    Themes
+  },
   data () {
     return {
       msg: 'Bienvenue sur votre générateur de match d\'improvisation',
       button1: 'Accueil',
-      categories: categories,
       durations: durations,
       players: players,
-      themes: themes,
       types: types,
       category: '',
       duration: '',

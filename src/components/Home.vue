@@ -8,6 +8,8 @@
       <router-link to="/training">
         <span>{{button2}}</span>
       </router-link>
+
+      <!-- TODO CREATE TEMPLATE HEADER FOOTER CONTENT -->
   </div>
 </template>
 
