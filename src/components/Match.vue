@@ -7,14 +7,7 @@
     </br>
     </br>
     
-    <b>Random</b></br>
-    <!-- <b>Type:</b> {{types[randomNumber(0, types.length)]}} </br>
-    <b>Theme:</b> {{themes[randomNumber(0, types.length)]}} </br>
-    <b>Number of players:</b> {{players[randomNumber(0, types.length)]}} </br> 
-    <b>Duration:</b> {{durations[randomNumber(0, types.length)]}} </br>
-    <b>Categorie:</b> {{categories[randomNumber(0, types.length)]}} </br> </br> -->
-
-    <button v-on:click="createMatch">Random</button> </br></br>
+    <button v-on:click="createMatch">Generate</button> </br></br>
     <b>Type:</b> {{type}} </br>
     <b>Theme:</b> {{theme}} </br>
     <b>Number of players:</b> {{player}} </br> 
@@ -52,8 +45,8 @@
 
     <b>CATEGORIES</b>
     <ul>
-      <li v-for="categoryy in categories" :key="categoryy">
-        {{categoryy}}
+      <li v-for="category in categories" :key="category">
+        {{category}}
       </li>
     </ul>
   </div>
@@ -77,31 +70,31 @@ export default {
       players: players,
       themes: themes,
       types: types,
-      category: "",
-      duration: "",
-      player: "",
-      theme: "",
-      type: "",
+      category: '',
+      duration: '',
+      player: '',
+      theme: '',
+      type: ''
     }
   },
-  created() {
-    this.createMatch();
+  created () {
+    this.createMatch()
   },
   watch: {
-    $route: "createMatch"
+    $route: 'createMatch'
   },
   methods: {
-    randomNumber : function(min, max){
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min)) + min;
+    randomNumber: function (min, max) {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+      return Math.floor(Math.random() * (max - min)) + min
     },
-    createMatch() {
-      this.category = categories[ Math.floor(Math.random() * (categories.length))];
-      this.duration = durations[ Math.floor(Math.random() * (durations.length))];
-      this.player = players[ Math.floor(Math.random() * (players.length))];
-      this.theme = themes[ Math.floor(Math.random() * (themes.length))];
-      this.type = types[ Math.floor(Math.random() * (types.length))];
+    createMatch () {
+      this.category = categories[Math.floor(Math.random() * (categories.length))]
+      this.duration = durations[Math.floor(Math.random() * (durations.length))]
+      this.player = players[Math.floor(Math.random() * (players.length))]
+      this.theme = themes[Math.floor(Math.random() * (themes.length))]
+      this.type = types[Math.floor(Math.random() * (types.length))]
     }
   }
 }
