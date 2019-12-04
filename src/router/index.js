@@ -4,6 +4,11 @@ import Match from '@/components/Match'
 import Training from '@/components/Training'
 import Referentials from '@/components/Referentials'
 
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+Vue.use(VueMaterial)
+
 Vue.use(Router)
 
 export default new Router({
