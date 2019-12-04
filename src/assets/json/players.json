@@ -1,8 +1,9 @@
 [
-  "1 par équipe",
-  "Minimum 2 par équipe",
-  "Maximum 2 par équipe",
-  "Minimum 3 par équipe",
-  "Maximum 3 par équipe",
+  "1 minimum",
+  "1 maximum",
+  "2 minimum",
+  "2 maximum",
+  "3 minimum",
+  "3 maximum",
   "Illimité"
 ]

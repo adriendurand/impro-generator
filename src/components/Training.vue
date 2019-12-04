@@ -1,9 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <router-link to="/">
-      <span>{{button1}}</span>
-    </router-link>
+  <div id="training">
+    <h1>Entrainement</h1>
   </div>
 </template>
 
@@ -12,8 +9,6 @@ export default {
   name: 'Training',
   data () {
     return {
-      msg: 'Bienvenue sur votre générateur d\'entrainement d\'improvisation',
-      button1: 'Accueil'
     }
   }
 }

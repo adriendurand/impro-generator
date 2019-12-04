@@ -1,56 +1,53 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
-    <router-link to="/">
-      <span>{{button1}}</span>
-    </router-link>
-    </br>
-    </br>
-    
-    <button v-on:click="createMatch">Generate</button> </br></br>
-    <b>Type:</b> {{type}} </br>
-    <b>Theme:</b> {{theme}} </br>
-    <b>Number of players:</b> {{player}} </br> 
-    <b>Duration:</b> {{duration}} </br>
-    <b>Category:</b> {{category}} </br> </br>
+  <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
+    <md-card-header>
+      <div class="md-title">Match</div>
+    </md-card-header>
 
-    </br>
-    <b>DURATIONS</b>
-    <ul>
-      <li v-for="duration in durations" :key="duration">
-        {{duration}}
-      </li>
-    </ul>
+    <md-card-content>
+      <div class="md-layout md-gutter">
+        <div class="md-layout-item md-small-size-100">
+          <md-field>
+            <label for="category">Dans la catégorie:</label>
+            <md-textarea id="category" v-model="category"></md-textarea>
+          </md-field>
+        </div>
+        <div class="md-layout-item md-small-size-100">
+          <md-field>
+            <label for="type">Improvisation:</label>
+            <md-input id="type" type="text" v-model="type"/>
+          </md-field>
+        </div>
+        <div class="md-layout-item md-small-size-100">
+          <md-field>
+            <label for="theme">Ayant pour thème:</label>
+            <md-input id="theme" type="text" v-model="theme"/>
+          </md-field>
+        </div>
+        <div class="md-layout-item md-small-size-100">
+          <md-field>
+            <label for="player">Nombre de joueurs:</label>
+            <md-input id="player" type="text" v-model="player"/>
+          </md-field>
+        </div>
+        <div class="md-layout-item md-small-size-100">
+          <md-field>
+            <label for="duration">Pour une durée de:</label>
+            <md-input id="duration" type="text" v-model="duration"/>
+          </md-field>
+        </div>
+      </div> 
+    </md-card-content>
 
-    <b>PLAYERS</b>
-    <ul>
-      <li v-for="player in players" :key="player">
-        {{player}}
-      </li>
-    </ul>
-
-    <b>TYPES</b>
-    <ul>
-      <li v-for="type in types" :key="type">
-        {{type}}
-      </li>
-    </ul>
-
-    <Categories />
-    <Themes />
-
-  </div>
+    <md-card-actions>
+          <md-button class="md-primary" v-on:click="createMatch">Nouvelle manche</md-button>      
+    </md-card-actions>
+  </md-card>
 </template>
 
 <script>
-// Components
-import Categories from './Categories'
-import Themes from './Themes'
-
 // Assets
-// TODO Passer en paramètre ?
 import themes from '../assets/json/themes.json'
-// TODO Passer en paramètre ?
 import categories from '../assets/json/categories.json'
 import durations from '../assets/json/durations.json'
 import players from '../assets/json/players.json'
@@ -59,13 +56,9 @@ import types from '../assets/json/types.json'
 export default {
   name: 'Match',
   components: {
-    Categories,
-    Themes
   },
   data () {
     return {
-      msg: 'Bienvenue sur votre générateur de match d\'improvisation',
-      button1: 'Accueil',
       durations: durations,
       players: players,
       types: types,
@@ -97,10 +90,17 @@ export default {
     }
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+  textarea {
+    border: 1px solid #888;
+    outline: none;
+    resize: none;
+    overflow: auto;
+    height: 8rem;
+    width: 25em;
+  }
 </style>

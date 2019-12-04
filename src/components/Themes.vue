@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <b>THEMES</b>
+  <div id="themes">
+    <h1>Thèmes</h1>
     <ul>
       <li v-for="theme in themes" :key="theme">
         {{theme}}
