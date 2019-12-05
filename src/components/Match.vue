@@ -32,7 +32,7 @@
         </md-card-content>
 
         <md-card-actions>
-          <md-button class="md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
+          <md-button  class="md-icon-button md-dense md-raised md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
         </md-card-actions>
       </md-card>
 
@@ -43,9 +43,9 @@
           <li><span id="seconds">{{countdownSec}}</span> Secondes</li>
         </ul>
         <md-card-actions>
-          <md-button class="md-primary" v-on:click="removeTimer"><md-icon>remove</md-icon></md-button>
-          <md-button class="md-primary" v-on:click="initCountdown"><md-icon>stop</md-icon></md-button>
-          <md-button class="md-primary" v-on:click="launchCountdown"><md-icon>play_arrow</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="removeTimer" :disabled="isMinTimer"><md-icon>remove</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="initCountdown" :disabled="!isPlaying"><md-icon>stop</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="launchCountdown" :disabled="isPlaying"><md-icon>play_arrow</md-icon></md-button>
           <md-button class="md-primary" v-on:click="addTimer"><md-icon>add</md-icon></md-button>
         </md-card-actions>
       </div>
@@ -80,6 +80,8 @@ export default {
       type: '',
       countdownMin: 0,
       countdownSec: 0,
+      isPlaying: false,
+      isMinTimer: false,
       x: ''
     }
   },
@@ -106,10 +108,12 @@ export default {
     },
     initCountdown () {
       this.countdownMin = this.duration
+      this.isPlaying = false
       this.countdownSec = 0
       clearInterval(this.x)
     },
     launchCountdown () {
+      this.isPlaying = true
       var self = this
       var timer = moment().add((self.duration * 60) + 1, 's')
 
@@ -129,11 +133,14 @@ export default {
       if (this.duration > 1) {
         this.duration--
         this.countdownMin = this.duration
+      } else {
+        this.isMinTimer = true
       }
     },
     addTimer () {
       this.duration++
       this.countdownMin = this.duration
+      this.isMinTimer = false
     }
   }
 }
