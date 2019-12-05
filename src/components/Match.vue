@@ -49,6 +49,9 @@
           <md-button class="md-primary" v-on:click="launchCountdown" :disabled="isPlaying" @click="isPlaying = true"><md-icon>play_arrow</md-icon></md-button>
           <md-button class="md-primary" v-on:click="addTimer"><md-icon>add</md-icon></md-button>
         </md-card-actions>
+        <md-card-actions>
+          <md-button class="md-primary" :disabled="isPlaying" @click="duration = 1; countdownMin = 1; countdownSec = 0"><md-icon>refresh</md-icon></md-button>
+        </md-card-actions>
       </div>
 
     </form>
