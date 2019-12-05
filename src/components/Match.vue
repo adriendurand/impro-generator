@@ -11,7 +11,8 @@
             <div class="md-layout-item md-small-size-100">
               <md-field>
                 <label for="category">Dans la catégorie:</label>
-                <md-textarea id="category" v-model="category"></md-textarea>
+                <md-input id="category" v-model="category.title"/>
+                <!-- <md-input id="category.detail" v-model="category.detail"/> -->
               </md-field>
             </div>
             <div class="md-layout-item md-small-size-100">
@@ -42,9 +43,21 @@
         </md-card-content>
 
         <md-card-actions>
-          <md-button class="md-primary" v-on:click="createMatch">Nouvelle manche</md-button>
+          <md-button v-on:click="createMatch">Générer</md-button>
+          <md-button class="md-primary" v-on:click="countdown">Nouvelle manche</md-button>
+        </md-card-actions>
+        <md-card-actions>
         </md-card-actions>
       </md-card>
+
+      <div class="container">
+        <h1 id="head">Fin de l'impro dans:</h1>
+        <ul>
+         <!-- <li><span id="minutes">{{countdownMin}}</span> Minutes</li>-->
+          <li><span id="seconds">{{countdownSec}}</span> Secondes</li>
+        </ul>
+      </div>
+
     </form>
   </div>
 </template>
@@ -56,6 +69,8 @@ import categories from '../assets/json/categories.json'
 import durations from '../assets/json/durations.json'
 import players from '../assets/json/players.json'
 import types from '../assets/json/types.json'
+
+import moment from 'moment'
 
 export default {
   name: 'Match',
@@ -70,7 +85,10 @@ export default {
       duration: '',
       player: '',
       theme: '',
-      type: ''
+      type: '',
+      countdownMin: 0,
+      countdownSec: 0,
+      x: ''
     }
   },
   created () {
@@ -87,10 +105,27 @@ export default {
     },
     createMatch () {
       this.category = categories[Math.floor(Math.random() * (categories.length))]
-      this.duration = durations[Math.floor(Math.random() * (durations.length))]
+      this.duration = durations[Math.floor(Math.random() * (durations.length))] * 60
       this.player = players[Math.floor(Math.random() * (players.length))]
       this.theme = themes[Math.floor(Math.random() * (themes.length))]
       this.type = types[Math.floor(Math.random() * (types.length))]
+
+      this.countdownSec = this.duration
+      clearInterval(this.x)
+    },
+    countdown () {
+      var self = this
+      var timer = moment().add(self.duration + 1, 's')
+
+      self.x = setInterval(function () {
+        var dif = Math.floor(moment.duration(timer.diff(moment())).asSeconds())
+        console.log(dif)
+        self.countdownSec = dif
+
+        if (dif <= 0) {
+          clearInterval(self.x)
+        }
+      }, 1000)
     }
   }
 }
@@ -107,4 +142,27 @@ export default {
     height: 8rem;
     width: 25em;
   }
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
 </style>

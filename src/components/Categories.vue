@@ -3,7 +3,8 @@
     <h1>Catégories</h1>
     <ul>
       <li v-for="category in categories" :key="category">
-        {{category}}
+        {{category.title}}
+        >> {{category.detail}}
       </li>
     </ul>
   </div>
