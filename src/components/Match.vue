@@ -10,7 +10,8 @@
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
               <span>Dans la catégorie: {{category.title}}</span>
-                <!-- {{ategory.detail}} -->
+              <md-tooltip :md-active.sync="tooltipActive">{{category.detail}}</md-tooltip>
+              <md-button class="md-primary" @click="tooltipActive = !tooltipActive"><md-icon>help</md-icon></md-button>
             </div>
             <div class="md-layout-item md-small-size-100">
               <span>Improvisation:</span>
@@ -44,8 +45,8 @@
         </ul>
         <md-card-actions>
           <md-button class="md-primary" v-on:click="removeTimer" :disabled="isMinTimer"><md-icon>remove</md-icon></md-button>
-          <md-button class="md-primary" v-on:click="initCountdown" :disabled="!isPlaying"><md-icon>stop</md-icon></md-button>
-          <md-button class="md-primary" v-on:click="launchCountdown" :disabled="isPlaying"><md-icon>play_arrow</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="initCountdown" :disabled="!isPlaying" @click="isPlaying = false"><md-icon>stop</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="launchCountdown" :disabled="isPlaying" @click="isPlaying = true"><md-icon>play_arrow</md-icon></md-button>
           <md-button class="md-primary" v-on:click="addTimer"><md-icon>add</md-icon></md-button>
         </md-card-actions>
       </div>
@@ -82,6 +83,7 @@ export default {
       countdownSec: 0,
       isPlaying: false,
       isMinTimer: false,
+      tooltipActive: false,
       x: ''
     }
   },
@@ -108,12 +110,12 @@ export default {
     },
     initCountdown () {
       this.countdownMin = this.duration
-      this.isPlaying = false
+      //this.isPlaying = false
       this.countdownSec = 0
       clearInterval(this.x)
     },
     launchCountdown () {
-      this.isPlaying = true
+      //this.isPlaying = true
       var self = this
       var timer = moment().add((self.duration * 60) + 1, 's')
 
