@@ -9,53 +9,45 @@
         <md-card-content>
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
-              <md-field>
-                <label for="category">Dans la catégorie:</label>
-                <md-input id="category" v-model="category.title"/>
-                <!-- <md-input id="category.detail" v-model="category.detail"/> -->
-              </md-field>
+              <span>Dans la catégorie: {{category.title}}</span>
+                <!-- {{ategory.detail}} -->
             </div>
             <div class="md-layout-item md-small-size-100">
-              <md-field>
-                <label for="type">Improvisation:</label>
-                <md-input id="type" type="text" v-model="type"/>
-              </md-field>
+              <span>Improvisation:</span>
+              <span>{{type}}</span>
             </div>
             <div class="md-layout-item md-small-size-100">
-              <md-field>
-                <label for="theme">Ayant pour thème:</label>
-                <md-input id="theme" type="text" v-model="theme"/>
-              </md-field>
+              <span>Ayant pour thème:</span>
+              <span>{{theme}}</span>
             </div>
             <div class="md-layout-item md-small-size-100">
-              <md-field>
-                <label for="player">Nombre de joueurs:</label>
-                <md-input id="player" type="text" v-model="player"/>
-              </md-field>
+              <span>Nombre de joueurs:</span>
+              <span>{{player}}</span>
             </div>
             <div class="md-layout-item md-small-size-100">
-              <md-field>
-                <label for="duration">Pour une durée de:</label>
-                <md-input id="duration" type="text" v-model="duration"/>
-              </md-field>
+              <span>Pour une durée de:</span>
+              <span>{{duration}} minutes</span>
             </div>
           </div>
         </md-card-content>
 
         <md-card-actions>
-          <md-button v-on:click="createMatch">Générer</md-button>
-          <md-button class="md-primary" v-on:click="countdown">Nouvelle manche</md-button>
-        </md-card-actions>
-        <md-card-actions>
+          <md-button class="md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
         </md-card-actions>
       </md-card>
 
       <div class="container">
         <h1 id="head">Fin de l'impro dans:</h1>
         <ul>
-         <!-- <li><span id="minutes">{{countdownMin}}</span> Minutes</li>-->
+          <li><span id="minutes">{{countdownMin}}</span> Minutes</li>
           <li><span id="seconds">{{countdownSec}}</span> Secondes</li>
         </ul>
+        <md-card-actions>
+          <md-button class="md-primary" v-on:click="removeTimer"><md-icon>remove</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="initCountdown"><md-icon>stop</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="launchCountdown"><md-icon>play_arrow</md-icon></md-button>
+          <md-button class="md-primary" v-on:click="addTimer"><md-icon>add</md-icon></md-button>
+        </md-card-actions>
       </div>
 
     </form>
@@ -105,27 +97,43 @@ export default {
     },
     createMatch () {
       this.category = categories[Math.floor(Math.random() * (categories.length))]
-      this.duration = durations[Math.floor(Math.random() * (durations.length))] * 60
+      this.duration = durations[Math.floor(Math.random() * (durations.length))]
       this.player = players[Math.floor(Math.random() * (players.length))]
       this.theme = themes[Math.floor(Math.random() * (themes.length))]
       this.type = types[Math.floor(Math.random() * (types.length))]
 
-      this.countdownSec = this.duration
+      this.initCountdown()
+    },
+    initCountdown () {
+      this.countdownMin = this.duration
+      this.countdownSec = 0
       clearInterval(this.x)
     },
-    countdown () {
+    launchCountdown () {
       var self = this
-      var timer = moment().add(self.duration + 1, 's')
+      var timer = moment().add((self.duration * 60) + 1, 's')
 
       self.x = setInterval(function () {
-        var dif = Math.floor(moment.duration(timer.diff(moment())).asSeconds())
-        console.log(dif)
-        self.countdownSec = dif
+        var distance = Math.floor(moment.duration(timer.diff(moment())))
 
-        if (dif <= 0) {
+        self.countdownMin = Math.floor((distance % 3600000) / 60000)
+        self.countdownSec = Math.floor((distance % 60000) / 1000)
+        // console.log(self.countdownMin + ":" + self.countdownSec)
+
+        if (distance <= 0) {
           clearInterval(self.x)
         }
       }, 1000)
+    },
+    removeTimer () {
+      if (this.duration > 1) {
+        this.duration--
+        this.countdownMin = this.duration
+      }
+    },
+    addTimer () {
+      this.duration++
+      this.countdownMin = this.duration
     }
   }
 }
