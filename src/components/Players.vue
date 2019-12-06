@@ -1,26 +1,25 @@
 <template>
-  <div id="themes">
-    <h1>Thèmes</h1>
+  <div id="types">
+    <h1>Players</h1>
     <ul>
-      <li v-for="theme in themes" :key="theme">
-        {{theme}}
+      <li v-for="player in players" :key="player">
+        {{player}}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import themes from '@/assets/json/themes.json'
+import players from '@/assets/json/players.json'
 
 export default {
-  name: 'Themes',
+  name: 'Players',
   data () {
     return {
-      themes: themes
+      players: players
     }
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

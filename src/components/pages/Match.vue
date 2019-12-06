@@ -68,11 +68,11 @@
 
 <script>
 // Assets
-import themes from '../assets/json/themes.json'
-import categories from '../assets/json/categories.json'
-import durations from '../assets/json/durations.json'
-import players from '../assets/json/players.json'
-import types from '../assets/json/types.json'
+import themes from '@/assets/json/themes.json'
+import categories from '@/assets/json/categories.json'
+import durations from '@/assets/json/durations.json'
+import players from '@/assets/json/players.json'
+import types from '@/assets/json/types.json'
 
 import moment from 'moment'
 
@@ -150,7 +150,6 @@ export default {
 
         self.countdownMin = Math.floor((distance % 3600000) / 60000)
         self.countdownSec = Math.floor((distance % 60000) / 1000)
-        // console.log(self.countdownMin + ":" + self.countdownSec)
 
         if (distance <= 0) {
           clearInterval(self.x)
@@ -161,7 +160,7 @@ export default {
       if (this.duration > 1) {
         this.duration--
         this.countdownMin = this.duration
-      } 
+      }
       if (this.duration <= 1) {
         this.isMinTimer = true
       }

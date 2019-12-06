@@ -11,8 +11,7 @@
 </template>
 
 <script>
-// TODO Passer en paramètre ?
-import categories from '../assets/json/categories.json'
+import categories from '@/assets/json/categories.json'
 
 export default {
   name: 'Categories',
