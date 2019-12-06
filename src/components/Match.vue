@@ -9,9 +9,8 @@
         <md-card-content>
           <div class="md-layout md-gutter">
             <div class="md-layout-item md-small-size-100">
-              <span>Dans la catégorie: {{category.title}}</span>
-              <md-tooltip :md-active.sync="tooltipActive">{{category.detail}}</md-tooltip>
-              <md-button class="md-primary" @click="tooltipActive = !tooltipActive"><md-icon>help</md-icon></md-button>
+              <span>Dans la catégorie: {{category.title}}</span>          
+              <md-button class="md-primary" :disabled="(category.detail == '')" @click="showDialog = (category.detail != '')"><md-icon>help</md-icon></md-button>
             </div>
             <div class="md-layout-item md-small-size-100">
               <span>Improvisation:</span>
@@ -36,6 +35,11 @@
           <md-button  class="md-icon-button md-dense md-raised md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
         </md-card-actions>
       </md-card>
+
+      <md-dialog :md-active.sync="showDialog">
+        <md-dialog-title>Détails</md-dialog-title>
+        {{category.detail}}
+      </md-dialog>
 
       <div class="container">
         <h1 id="head">Fin de l'impro dans:</h1>
@@ -87,6 +91,7 @@ export default {
       isPlaying: false,
       isMinTimer: false,
       tooltipActive: false,
+      showDialog: false,
       x: ''
     }
   },
@@ -184,5 +189,7 @@ li span {
   display: block;
   font-size: 4.5rem;
 }
-
+.md-dialog {
+    max-width: 768px;
+  }
 </style>
