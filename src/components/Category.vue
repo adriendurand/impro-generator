@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md-layout-item md-small-size-100">
-      <span class="title">Dans la catégorie:</span>
+      <span class="title">Catégorie:</span>
       <span> {{category.title}}</span>
       <md-button class="md-primary" :disabled="(category.detail == '')" @click="showDialog = (category.detail != '')"><md-icon>help</md-icon></md-button>
       <md-button class="md-primary" @click="refreshCategory"><md-icon>refresh</md-icon></md-button>

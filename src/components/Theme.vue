@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md-layout-item md-small-size-100">
-      <span class="title">Ayant pour thème:</span>
+      <span class="title">Thème:</span>
       <span>{{theme}}</span>
       <md-button class="md-primary" @click="refreshTheme"><md-icon>refresh</md-icon></md-button>
     </div>
@@ -33,7 +33,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>

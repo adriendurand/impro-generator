@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md-layout-item md-small-size-100">
-      <span class="title">Character:</span>
+      <span class="title">Personnage:</span>
       <span> {{character}}</span>
       <md-button class="md-primary" @click="refreshCharacter"><md-icon>refresh</md-icon></md-button>
     </div>
@@ -33,7 +33,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 </style>
