@@ -22,5 +22,8 @@ export default {
 </script>
 
 <style>
-
+ span.title {
+   font-weight: bold;
+   font-size: 1.2em;
+ }
 </style>

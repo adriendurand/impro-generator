@@ -74,11 +74,15 @@ import durations from '@/assets/json/durations.json'
 import players from '@/assets/json/players.json'
 import types from '@/assets/json/types.json'
 
+// Components
+import Category from '@/components/Category'
+
 import moment from 'moment'
 
 export default {
   name: 'Match',
   components: {
+    'Category': Category
   },
   data () {
     return {
@@ -94,7 +98,6 @@ export default {
       countdownSec: 0,
       isPlaying: false,
       isMinTimer: false,
-      tooltipActive: false,
       showDialog: false,
       x: ''
     }

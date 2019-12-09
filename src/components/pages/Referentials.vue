@@ -18,7 +18,7 @@ import Players from '@/components/Players'
 import Durations from '@/components/Durations'
 
 export default {
-  name: 'Referenials',
+  name: 'Referentials',
   components: {
     'Categories': Categories,
     'Themes': Themes,

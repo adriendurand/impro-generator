@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <div class="md-layout-item md-small-size-100">
+      <span class="title">Place:</span>
+      <span> {{place}}</span>
+      <md-button class="md-primary" @click="refreshPlace"><md-icon>refresh</md-icon></md-button>
+    </div>
+  </div>
+</template>
+
+<script>
+import places from '@/assets/json/places.json'
+
+export default {
+  name: 'Place',
+  data () {
+    return {
+      places: places,
+      place: ''
+    }
+  },
+  created () {
+    this.refreshPlace()
+  },
+  watch: {
+    $route: 'refreshPlace'
+  },
+  methods: {
+    refreshPlace () {
+      this.place = places[Math.floor(Math.random() * (places.length))]
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>
