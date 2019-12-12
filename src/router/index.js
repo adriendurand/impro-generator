@@ -19,11 +19,6 @@ export default new Router({
       component: Match
     },
     {
-      path: '/match',
-      name: 'Match',
-      component: Match
-    },
-    {
       path: '/training',
       name: 'Training',
       component: Training

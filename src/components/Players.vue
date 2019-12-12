@@ -1,6 +1,6 @@
 <template>
   <div id="types">
-    <h1>Players</h1>
+    <h3>Nombre de joueurs</h3>
     <ul>
       <li v-for="player in players" :key="player">
         {{player}}

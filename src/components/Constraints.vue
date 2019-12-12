@@ -1,6 +1,6 @@
 <template>
   <div id="constraints">
-    <h1>Contraintes</h1>
+    <h3>Contraintes</h3>
     <ul>
       <li v-for="constraint in constraints" :key="constraint.title">
         {{constraint.title}}

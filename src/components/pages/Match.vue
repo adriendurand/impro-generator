@@ -2,10 +2,6 @@
   <div id="match">
     <form novalidate class="md-layout">
       <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
-        <md-card-header>
-          <div class="md-title">Match</div>
-        </md-card-header>
-
         <md-card-content>
           <div class="md-layout md-gutter">
             <Category ref="Category" />

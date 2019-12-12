@@ -1,6 +1,6 @@
 <template>
   <div id="types">
-    <h1>Types</h1>
+    <h3>Types</h3>
     <ul>
       <li v-for="type in types" :key="type">
         {{type}}

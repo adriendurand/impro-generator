@@ -1,30 +1,46 @@
 <template>
-  <div>
-    <my-header/>
-    <div id="app">
+  <div class="page-container">
+    <md-app md-mode="reveal">
+      <md-app-toolbar class="md-primary">
+        <!-- <md-button class="md-icon-button" @click="menuVisible = !menuVisible">
+          <md-icon>menu</md-icon>
+        </md-button> -->
+        <span class="md-title">Impro Générator</span>
+      </md-app-toolbar>
+
+      <md-app-drawer :md-active.sync="menuVisible">
+        <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+
+        <md-list>
+          <md-list-item>
+            <md-icon>move_to_inbox</md-icon>
+            <span class="md-list-item-text">Inbox</span>
+          </md-list-item>
+        </md-list>
+      </md-app-drawer>
+
+      <md-app-content>
+        <md-tabs md-sync-route>
+          <md-tab id="tab-home" md-label="Match" to="/" exact></md-tab>
+          <md-tab id="tab-pages" md-label="Entrainement" to="/training"></md-tab>
+          <md-tab id="tab-posts" md-label="Référentiels" to="/referentials"></md-tab>
+        </md-tabs>
         <router-view/>
-    </div>
-    <my-footer/>
+      </md-app-content>
+    </md-app>
   </div>
 </template>
 
 <script>
-// Layouts
-import Header from './components/layouts/Header'
-import Footer from './components/layouts/Footer'
 
 export default {
   name: 'App',
-  components: {
-    'my-header': Header,
-    'my-footer': Footer
-  }
+  data: () => ({
+    menuVisible: false
+  })
 }
 </script>
 
 <style>
- span.title {
-   font-weight: bold;
-   font-size: 1.2em;
- }
+
 </style>

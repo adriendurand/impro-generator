@@ -1,6 +1,6 @@
 <template>
   <div id="types">
-    <h1>Durations</h1>
+    <h3>Durations</h3>
     <ul>
       <li v-for="duration in durations" :key="duration">
         {{duration}}

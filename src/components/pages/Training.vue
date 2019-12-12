@@ -1,12 +1,11 @@
 <template>
   <div id="training">
-    <h1>Entrainement</h1>
-      <Category />
-      <Theme />
-      <Constraint />
-      <Place />
-      <Feeling />
-      <Character />
+    <Category />
+    <Theme />
+    <Constraint />
+    <Place />
+    <Feeling />
+    <Character />
   </div>
 </template>
 

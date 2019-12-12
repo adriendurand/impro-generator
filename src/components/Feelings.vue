@@ -1,6 +1,6 @@
 <template>
   <div id="feelings">
-    <h1>Emotions</h1>
+    <h3>Emotions</h3>
     <ul>
       <li v-for="feeling in feelings" :key="feeling">
         {{feeling}}

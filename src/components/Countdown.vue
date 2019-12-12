@@ -1,6 +1,6 @@
 <template>
    <div class="container">
-      <h1 id="head">Fin dans:</h1>
+      <h3 id="head">Fin dans:</h3>
       <ul>
         <li><span id="minutes">{{countdownMin}}</span> Minutes</li>
         <li><span id="seconds">{{countdownSec}}</span> Secondes</li>

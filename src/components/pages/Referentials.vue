@@ -1,6 +1,5 @@
 <template>
-  <div id="referencials">
-    <h1>Référentiels</h1>
+  <div id="referentials">
     <Durations />
     <Players />
     <Types />

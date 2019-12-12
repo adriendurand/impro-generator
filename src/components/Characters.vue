@@ -1,6 +1,6 @@
 <template>
   <div id="characters">
-    <h1>Personnages</h1>
+    <h3>Personnages</h3>
     <ul>
       <li v-for="character in characters" :key="character">
         {{character}}
