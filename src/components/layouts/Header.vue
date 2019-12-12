@@ -1,17 +1,12 @@
 <template>
     <div id="header">
-        <h1>Header</h1>
-        <nav>
-            <router-link to="/match">Match</router-link>
-            <router-link to="/training">Entrainement</router-link>
-            <router-link to="/referentials">Référentiels</router-link>
-        </nav>
+        <h1>IMPRO GENERATOR</h1>
     </div>
 </template>
 
 <script>
 export default {
-  name: 'footer'
+  name: 'my-header'
 }
 </script>
 
