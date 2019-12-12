@@ -2,7 +2,7 @@
   <div id="constraints">
     <h1>Contraintes</h1>
     <ul>
-      <li v-for="constraint in constraints" :key="constraint">
+      <li v-for="constraint in constraints" :key="constraint.title">
         {{constraint.title}}
         >> {{constraint.detail}}
       </li>

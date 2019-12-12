@@ -2,7 +2,7 @@
   <div id="categories">
     <h1>Catégories</h1>
     <ul>
-      <li v-for="category in categories" :key="category">
+      <li v-for="category in categories" :key="category.title">
         {{category.title}}
         >> {{category.detail}}
       </li>
