@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// Assets
 import types from '@/assets/json/types.json'
 
 export default {

@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// Libraries
 import moment from 'moment'
 
 export default {
@@ -52,10 +53,11 @@ export default {
     },
     launchCountdown () {
       var self = this
-      console.log('Launch count down ...')
-      console.log('Duration: ' + self.duration)
-      console.log('CountDownMin: ' + self.countdownMin)
-      console.log('CountDownSec: ' + self.countdownSec)
+      // DEBUG
+      // console.log('Launch count down ...')
+      // console.log('Duration: ' + self.duration)
+      // console.log('CountDownMin: ' + self.countdownMin)
+      // console.log('CountDownSec: ' + self.countdownSec)
 
       var timer = moment().add((self.duration * 60) + 1, 's')
 

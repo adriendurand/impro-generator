@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// Assets
 import places from '@/assets/json/places.json'
 
 export default {

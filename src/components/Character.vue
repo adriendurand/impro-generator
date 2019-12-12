@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// Assets
 import characters from '@/assets/json/characters.json'
 
 export default {

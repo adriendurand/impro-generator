@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// Assets
 import constraints from '@/assets/json/constraints.json'
 
 export default {

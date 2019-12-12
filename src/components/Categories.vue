@@ -4,12 +4,14 @@
     <ul>
       <li v-for="category in categories" :key="category">
         {{category.title}}
+        >> {{category.detail}}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+// Assets
 import categories from '@/assets/json/categories.json'
 
 export default {

@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// Assets
 import feelings from '@/assets/json/feelings.json'
 
 export default {

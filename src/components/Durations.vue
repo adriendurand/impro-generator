@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// Assets
 import durations from '@/assets/json/durations.json'
 
 export default {

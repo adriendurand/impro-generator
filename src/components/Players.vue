@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// Assets
 import players from '@/assets/json/players.json'
 
 export default {

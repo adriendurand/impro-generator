@@ -15,6 +15,7 @@
 </template>
 
 <script>
+// Assets
 import categories from '@/assets/json/categories.json'
 
 export default {

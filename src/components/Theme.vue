@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// Assets
 import themes from '@/assets/json/themes.json'
 
 export default {
