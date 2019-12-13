@@ -1,6 +1,6 @@
 <template>
   <div id="categories">
-    <h2>Catégories</h2>
+    <h3>Catégories</h3>
     <ul>
       <li v-for="category in categories" :key="category.title">
         {{category.title}}

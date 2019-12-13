@@ -1,13 +1,19 @@
 <template>
   <div id="referentials">
-    <Durations />
-    <Players />
-    <Types />
-    <Constraints />
-    <Feelings />
-    <Characters />
-    <Categories />
-    <Themes />
+    <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
+      <md-card-content>
+        <div class="md-layout md-gutter">
+          <Durations />
+          <Players />
+          <Types />
+          <Constraints />
+          <Feelings />
+          <Characters />
+          <Categories />
+          <Themes />
+        </div>
+      </md-card-content>
+    </md-card>
   </div>
 </template>
 

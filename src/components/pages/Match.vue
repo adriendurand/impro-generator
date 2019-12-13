@@ -1,24 +1,28 @@
 <template>
   <div id="match">
-    <form novalidate class="md-layout">
-      <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
-        <md-card-content>
-          <div class="md-layout md-gutter">
-            <Category ref="Category" />
-            <Type ref="Type" />
-            <Theme ref="Theme" />
-            <Player ref="Player" />
-            <Duration ref="Duration" />
-          </div>
-        </md-card-content>
+    <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
+      <md-card-content>
+        <div class="md-layout md-gutter">
+          <Category ref="Category" />
+          <Type ref="Type" />
+          <Theme ref="Theme" />
+          <Player ref="Player" />
+          <Duration ref="Duration" />
+        </div>
+      </md-card-content>
 
-        <md-card-actions>
-          <md-button  class="md-icon-button md-dense md-raised md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
-        </md-card-actions>
-      </md-card>
+      <md-card-actions>
+        <md-button  class="md-icon-button md-dense md-raised md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
+      </md-card-actions>
+    </md-card>
 
-      <Countdown ref="Countdown" />
-    </form>
+    <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
+      <md-card-content>
+        <div class="md-layout md-gutter">
+          <Countdown ref="Countdown" />
+        </div>
+      </md-card-content>
+    </md-card>
   </div>
 </template>
 

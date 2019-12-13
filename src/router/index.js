@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Match from '@/components/pages/Match'
 import Training from '@/components/pages/Training'
 import Referentials from '@/components/pages/Referentials'
+import About from '@/components/pages/about'
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
@@ -27,6 +28,11 @@ export default new Router({
       path: '/referentials',
       name: 'Referentials',
       component: Referentials
+    },
+    {
+      path: '/about',
+      name: 'About',
+      component: About
     }
   ]
 })

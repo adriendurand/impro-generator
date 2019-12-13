@@ -1,11 +1,17 @@
 <template>
   <div id="training">
-    <Category />
-    <Theme />
-    <Constraint />
-    <Place />
-    <Feeling />
-    <Character />
+    <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
+      <md-card-content>
+        <div class="md-layout md-gutter">
+          <Category />
+          <Theme />
+          <Constraint />
+          <Place />
+          <Feeling />
+          <Character />
+        </div>
+      </md-card-content>
+    </md-card>
   </div>
 </template>
 
