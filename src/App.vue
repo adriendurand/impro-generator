@@ -8,7 +8,7 @@
               <md-icon>menu</md-icon>
             </md-button>
 
-            <span class="md-title">My Title</span>
+            <span class="md-title">Impro Générator</span>
           </div>
         </div>
 
@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<style scoped>
+<style>
    /* .md-app {
     max-height: 700px;
     border: 1px solid rgba(#000, .12);
@@ -52,6 +52,10 @@
   .md-content {
     max-height: 700px;
     overflow: auto;
+    word-break: break-all;
+  }
+  .md-card-content { 
+    margin: 0 1% 0 1%;
   }
 </style>
 

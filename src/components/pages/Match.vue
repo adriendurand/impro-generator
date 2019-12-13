@@ -15,14 +15,9 @@
         <md-button  class="md-icon-button md-dense md-raised md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
       </md-card-actions>
     </md-card>
-
-    <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
-      <md-card-content>
-        <div class="md-layout md-gutter">
-          <Countdown ref="Countdown" />
-        </div>
-      </md-card-content>
-    </md-card>
+    
+    <Countdown ref="Countdown" />   
+  
   </div>
 </template>
 
