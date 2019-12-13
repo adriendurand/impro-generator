@@ -1,7 +1,9 @@
 <template>
    <div id="countdown">
-      <h3>Fin dans:</h3>
-      <span>{{countdownMin}} Minutes {{countdownSec}} Secondes</span>
+      <md-card-content>
+        <h3>Fin dans:</h3>
+        <span>{{countdownMin}} Minutes {{countdownSec}} Secondes</span>
+      </md-card-content>
 
       <md-card-actions>
         <md-button class="md-primary" v-on:click="removeTimer" :disabled="isMinTimer || isPlaying"><md-icon>remove</md-icon></md-button>
