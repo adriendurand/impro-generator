@@ -8,7 +8,7 @@
               <md-icon>menu</md-icon>
             </md-button>
 
-            <span class="md-title">Impro Générator</span>
+            <span class="md-title">Impro Generator</span>
           </div>
         </div>
 
@@ -35,6 +35,7 @@
             <span class="md-list-item-text">A propos</span>
           </md-list-item>
         </md-list>
+        Dévelopée avec ❤ par <a href="mailto:adurand.contact@gmail.com">Adrien DURAND</a>
       </md-app-drawer>
 
       <md-app-content>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md-layout-item md-small-size-100">
-      <span class="title">Player:</span>
+      <span class="title">Nombre de joueurs:</span>
       <span> {{player}}</span>
       <md-button class="md-primary" @click="refreshPlayer"><md-icon>refresh</md-icon></md-button>
     </div>

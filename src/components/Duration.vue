@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="md-layout-item md-small-size-100">
-      <span class="title">Duration:</span>
+      <span class="title">Durée:</span>
       <span> {{duration}}</span>
     </div>
   </div>
