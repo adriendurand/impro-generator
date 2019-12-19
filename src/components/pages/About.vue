@@ -3,7 +3,7 @@
     <md-card id="match" class="md-layout-item md-size-50 md-small-size-100">
       <md-card-content>
         <div class="md-layout md-gutter">
-          Made with love by @adurand
+          Made with ❤ by @adurand
         </div>
       </md-card-content>
     </md-card>
