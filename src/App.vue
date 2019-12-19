@@ -54,7 +54,7 @@
     overflow: auto;
     word-break: break-all;
   }
-  .md-card-content { 
+  .md-card-content {
     margin: 0 1% 0 1%;
   }
 </style>
