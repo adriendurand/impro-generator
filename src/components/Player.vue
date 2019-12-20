@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="md-layout-item md-small-size-100">
-      <span class="title">Nombre de joueurs:</span>
-      <span> {{player}}</span>
-      <md-button class="md-primary" @click="refreshPlayer"><md-icon>refresh</md-icon></md-button>
-    </div>
+      <md-field>
+        <label class="title">Nombre de joueurs:</label>
+        <md-input class="md-input-override" v-model="player" />
+        <md-button class="md-icon-button md-primary" @click="refreshPlayer"><md-icon>refresh</md-icon></md-button>
+      </md-field>
   </div>
 </template>
 

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="md-layout-item md-small-size-100">
-      <span class="title">Type:</span>
-      <span> {{type}}</span>
-      <md-button class="md-primary" @click="refreshType"><md-icon>refresh</md-icon></md-button>
-    </div>
+      <md-field>
+        <label class="title">Type:</label>
+        <md-input class="md-input-override" v-model="type" />
+        <md-button class="md-icon-button md-primary" @click="refreshType"><md-icon>refresh</md-icon></md-button>
+      </md-field>
   </div>
 </template>
 

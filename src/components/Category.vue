@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="md-layout-item md-small-size-100">
-      <span class="title">Catégorie:</span>
-      <span> {{category.title}}</span>
-      <md-button class="md-primary" :disabled="(category.detail == '')" @click="showDialog = (category.detail != '')"><md-icon>help</md-icon></md-button>
-      <md-button class="md-primary" @click="refreshCategory"><md-icon>refresh</md-icon></md-button>
-    </div>
+      <md-field>
+        <label class="title">Catégorie:</label>
+        <md-input class="md-input-override" v-model="category.title" />  
+        <md-button class="md-icon-button md-primary" :disabled="(category.detail == '')" @click="showDialog = (category.detail != '')"><md-icon>help</md-icon></md-button>
+        <md-button class="md-icon-button md-primary" @click="refreshCategory"><md-icon>refresh</md-icon></md-button>
+      </md-field>
 
     <md-dialog :md-active.sync="showDialog">
       <md-dialog-title>Détails</md-dialog-title>

@@ -35,7 +35,7 @@
             <span class="md-list-item-text">A propos</span>
           </md-list-item>
         </md-list>
-        Dévelopée avec ❤ par <a href="mailto:adurand.contact@gmail.com">Adrien DURAND</a>
+        Dévelopé avec ❤ par <a href="https://twitter.com/adriendurand44">Adrien DURAND</a>
       </md-app-drawer>
 
       <md-app-content>
@@ -57,6 +57,17 @@
   }
   .md-card-content {
     margin: 0 1% 0 1%;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 1.2em !important;
+  }
+  .md-input-override {
+    margin-top: 10px;
+  }
+
+  div {
+    width: 100%;
   }
 </style>
 

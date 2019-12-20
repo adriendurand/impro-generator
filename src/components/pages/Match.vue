@@ -11,11 +11,11 @@
         </div>
       </md-card-content>
 
-      <md-card-actions>
-        <md-button  class="md-icon-button md-dense md-raised md-primary" v-on:click="createMatch"><md-icon>autorenew</md-icon></md-button>
+      <md-card-actions>    
+        <md-button class="md-raised md-primary" v-on:click="createMatch">Générer <md-icon>autorenew</md-icon></md-button>
       </md-card-actions>
-      <Countdown ref="Countdown" />
     </md-card>
+    <Countdown ref="Countdown" />
   </div>
 </template>
 

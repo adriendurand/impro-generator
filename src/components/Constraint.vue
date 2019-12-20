@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="md-layout-item md-small-size-100">
-      <span class="title">Contrainte:</span>
-      <span> {{constraint.title}}</span>
-      <md-button class="md-primary" :disabled="(constraint.detail == '')" @click="showDialog = (constraint.detail != '')"><md-icon>help</md-icon></md-button>
-      <md-button class="md-primary" @click="refreshConstraint"><md-icon>refresh</md-icon></md-button>
-    </div>
+      <md-field>
+        <label class="title">Contrainte:</label>
+        <md-input class="md-input-override" v-model="constraint.title" />
+        <md-button class="md-icon-button md-primary" :disabled="(constraint.detail == '')" @click="showDialog = (constraint.detail != '')"><md-icon>help</md-icon></md-button>
+        <md-button class="md-icon-button md-primary" @click="refreshConstraint"><md-icon>refresh</md-icon></md-button>
+      </md-field>
 
     <md-dialog :md-active.sync="showDialog">
       <md-dialog-title>Détails</md-dialog-title>

@@ -1,6 +1,6 @@
 # impro-generator
 
-> A Vue.js project
+> Générateur d'improvisations
 
 ## Build Setup
 

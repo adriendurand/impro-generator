@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="md-layout-item md-small-size-100">
-      <span class="title">Emotion:</span>
-      <span> {{feeling}}</span>
-      <md-button class="md-primary" @click="refreshFeeling"><md-icon>refresh</md-icon></md-button>
+      <md-field>
+        <label class="title">Emotion:</label>
+        <md-input class="md-input-override" v-model="feeling" />
+        <md-button class="md-icon-button md-primary" @click="refreshFeeling"><md-icon>refresh</md-icon></md-button>
+      </md-field>
     </div>
-  </div>
 </template>
 
 <script>
