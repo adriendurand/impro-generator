@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Match from '@/components/pages/Match'
+import Game from '@/components/pages/Game'
 import Training from '@/components/pages/Training'
 import Referentials from '@/components/pages/Referentials'
 import About from '@/components/pages/about'
@@ -16,8 +16,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Match',
-      component: Match
+      name: 'Game',
+      component: Game
     },
     {
       path: '/training',

@@ -1,6 +1,6 @@
 <template>
   <div class="page-container">
-    <md-app md-waterfall md-mode="fixed-last">
+    <md-app md-waterfall md-mode="fixed">
       <md-app-toolbar class="md-large md-dense md-primary">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
@@ -46,29 +46,7 @@
 </template>
 
 <style>
-   /* .md-app {
-    max-height: 700px;
-    border: 1px solid rgba(#000, .12);
-  } */
-  .md-content {
-    max-height: 700px;
-    overflow: auto;
-    word-break: break-all;
-  }
-  .md-card-content {
-    margin: 0 1% 0 1%;
-  }
-  .title {
-    font-weight: bold;
-    font-size: 1.2em !important;
-  }
-  .md-input-override {
-    margin-top: 10px;
-  }
 
-  div {
-    width: 100%;
-  }
 </style>
 
 <script>

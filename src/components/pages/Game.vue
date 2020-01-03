@@ -1,21 +1,22 @@
 <template>
-  <div id="match">
-    <md-card id="match" class="md-layout-item md-small-size-100">
+  <div id="game">
+    <md-card id="game" class="md-layout-item md-small-size-100">
       <md-card-content>
         <div class="md-layout md-gutter">
-          <Category ref="Category" />
-          <Type ref="Type" />
-          <Theme ref="Theme" />
-          <Player ref="Player" />
-          <Duration ref="Duration" />
+          <Category ref="Category"/>
+          <Type ref="Type"/>
+          <Theme ref="Theme"/>
+          <Player ref="Player"/>
+          <Duration ref="Duration"/>
+          <Player ref="Player"/>
         </div>
       </md-card-content>
 
-      <md-card-actions>    
-        <md-button class="md-raised md-primary" v-on:click="createMatch">Générer <md-icon>autorenew</md-icon></md-button>
+      <md-card-actions>
+        <md-button class="md-raised md-primary" v-on:click="createGame">Générer <md-icon>autorenew</md-icon></md-button>
       </md-card-actions>
     </md-card>
-    <Countdown ref="Countdown" />
+    <Countdown ref="Countdown"/>
   </div>
 </template>
 
@@ -29,7 +30,7 @@ import Duration from '@/components/Duration'
 import Countdown from '@/components/Countdown'
 
 export default {
-  name: 'Match',
+  name: 'Game',
   components: {
     'Category': Category,
     'Theme': Theme,
@@ -50,10 +51,10 @@ export default {
     this.$refs.Countdown.initCountdown()
   },
   watch: {
-    $route: 'createMatch'
+    $route: 'createGame'
   },
   methods: {
-    createMatch () {
+    createGame () {
       this.$refs.Category.refreshCategory()
       this.$refs.Duration.refreshDuration()
       this.$refs.Player.refreshPlayer()

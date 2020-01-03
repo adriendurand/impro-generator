@@ -1,6 +1,6 @@
 <template>
   <div id="training">
-    <md-card id="match" class="md-layout-item md-small-size-100">
+    <md-card class="md-layout-item md-small-size-100">
       <md-card-content>
         <div class="md-layout md-gutter">
           <Category />

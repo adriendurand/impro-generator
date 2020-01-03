@@ -3,8 +3,8 @@
       <md-field>
         <label class="title">Contrainte:</label>
         <md-input class="md-input-override" v-model="constraint.title" />
-        <md-button class="md-icon-button md-primary" :disabled="(constraint.detail == '')" @click="showDialog = (constraint.detail != '')"><md-icon>help</md-icon></md-button>
         <md-button class="md-icon-button md-primary" @click="refreshConstraint"><md-icon>refresh</md-icon></md-button>
+        <md-button class="md-icon-button md-primary" v-show="(constraint.detail != '')" @click="showDialog = (constraint.detail != '')"><md-icon>help</md-icon></md-button>
       </md-field>
 
     <md-dialog :md-active.sync="showDialog">
