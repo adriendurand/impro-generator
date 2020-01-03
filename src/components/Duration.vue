@@ -2,7 +2,7 @@
   <div>
       <md-field>
         <label class="title">Durée:</label>
-        <md-input class="md-input-override" v-model="duration" />
+        <md-input class="md-input-override" v-model="duration" readonly/>
         <md-button class="md-icon-button md-primary" @click="refreshDuration"><md-icon>refresh</md-icon></md-button>
       </md-field>
   </div>

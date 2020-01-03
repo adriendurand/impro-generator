@@ -2,7 +2,7 @@
   <div>
       <md-field>
         <label class="title">Personnage:</label>
-        <md-input class="md-input-override" v-model="character" />
+        <md-input class="md-input-override" v-model="character" readonly/>
         <md-button class="md-icon-button md-primary" @click="refreshCharacter"><md-icon>refresh</md-icon></md-button>
       </md-field>
   </div>

@@ -2,7 +2,7 @@
   <div>
       <md-field>
         <label class="title">Lieu:</label>
-        <md-input class="md-input-override" v-model="place" />
+        <md-input class="md-input-override" v-model="place" readonly/>
         <md-button class="md-icon-button md-primary" @click="refreshPlace"><md-icon>refresh</md-icon></md-button>
       </md-field>
   </div>

@@ -2,7 +2,7 @@
   <div>
       <md-field>
         <label class="title">Emotion:</label>
-        <md-input class="md-input-override" v-model="feeling" />
+        <md-input class="md-input-override" v-model="feeling" readonly/>
         <md-button class="md-icon-button md-primary" @click="refreshFeeling"><md-icon>refresh</md-icon></md-button>
       </md-field>
     </div>

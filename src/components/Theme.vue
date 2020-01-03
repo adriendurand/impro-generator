@@ -2,7 +2,7 @@
   <div>
       <md-field>
         <label class="title">Thème:</label>
-        <md-input class="md-input-override" v-model="theme" />
+        <md-input class="md-input-override" v-model="theme" readonly/>
         <md-button class="md-icon-button md-primary" @click="refreshTheme"><md-icon>refresh</md-icon></md-button>
       </md-field>
   </div>

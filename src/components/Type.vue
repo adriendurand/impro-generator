@@ -2,7 +2,7 @@
   <div>
       <md-field>
         <label class="title">Type:</label>
-        <md-input class="md-input-override" v-model="type" />
+        <md-input class="md-input-override" v-model="type" readonly/>
         <md-button class="md-icon-button md-primary" @click="refreshType"><md-icon>refresh</md-icon></md-button>
       </md-field>
   </div>
